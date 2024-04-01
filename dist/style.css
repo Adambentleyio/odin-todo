@@ -1,0 +1,378 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700&display=swap");
+
+:root {
+  --primary: #121244;
+  --secondary-1: #ffc766;
+  --secondary-2: #ffe199;
+  --secondary-3: #ffeac0;
+  --secondary-4: #fff6e6;
+  --border-radius: 5px;
+  --organism-padding: 20px;
+}
+
+:root {
+  /* Primary Color (Green) */
+  --primary-color: #4caf50; /* Main green color */
+
+  /* Complimentary Color (Reddish) */
+  --complimentary-color: #7f7f7f; /* Reddish color */
+
+  /* Accent Color (Blue) */
+  --accent-color: #2196f3; /* Blue color */
+
+  /* Background Color (Light Grey) */
+  --background-color: #f5f5f5; /* Light grey background */
+
+  /* Text Color (Dark Grey) */
+  --text-color: #333333; /* Dark grey text */
+
+  /* Secondary Color (Yellow) */
+  --secondary-color: #ffeb3b; /* Yellow color */
+
+  --button-primary: var(--accent-color); /* Primary shade for buttons */
+  --button-primary-hover: #43a047; /* Darker shade when hovered */
+  --button-primary-active: #388e3c; /* Even darker shade when active */
+
+  --button-secondary: var(--accent-color); /* Secondary shade for buttons */
+  --button-secondary-hover: #1976d2; /* Darker shade when hovered */
+  --button-secondary-active: #1565c0; /* Even darker shade when active */
+
+  --border-radius: 5px;
+  --organism-padding: 20px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+}
+
+p,
+a,
+li,
+span,
+button {
+  font-family: "Lato", sans-serif;
+}
+
+button,
+input {
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  outline: none;
+}
+
+button {
+  padding: 10px 0px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+i {
+  margin-right: 10px;
+}
+
+button.primary {
+  background-color: var(--button-primary);
+  background-color: #333355;
+  color: white;
+  border: var(--button-primary-active);
+  font-weight: 700;
+  cursor: pointer;
+  padding: 4px 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+button.primary:hover {
+  /* background-color: var(--button-primary-hover); */
+}
+
+button.secondary {
+  /* background-color: var(--button-secondary); */
+  color: white;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 4px 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+button.secondary:hover {
+  /* background-color: var(--button-secondary-hover); */
+}
+
+input[type="text"]:focus {
+  outline: var(--primary) auto 1px;
+}
+
+.card {
+  background-color: var(--secondary-4);
+  border-radius: var(--border-radius);
+  padding: var(--organism-padding);
+  margin: 20px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Layout elements */
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.root {
+  display: flex;
+  flex-grow: 1;
+}
+
+@media (max-width: 600px) {
+  .root {
+    flex-direction: column;
+  }
+}
+
+header,
+sidebar,
+main,
+footer {
+  padding: var(--organism-padding);
+  min-width: 20rem;
+}
+
+header,
+footer {
+  background: var(--primary);
+  color: white;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+sidebar button {
+  width: 100%;
+  background: transparent;
+  text-align: left;
+}
+
+sidebar > div {
+  margin: 1rem 0;
+}
+
+main {
+  display: grid;
+  align-items: stretch;
+}
+
+main .project-preview {
+  max-width: 900px;
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: var(--organism-padding) 0;
+}
+
+.add-task-popup {
+  display: none;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: var(--organism-padding);
+}
+
+.add-task-popup.active {
+  display: block;
+}
+
+.add-task-popup-buttons {
+  display: flex;
+  gap: var(--organism-padding);
+  justify-content: space-between;
+}
+
+.button-add-task.active {
+  display: none;
+}
+
+.button-add-task:hover {
+  /* background-color: var(--secondary-1); */
+}
+
+input.input-add-task-popup {
+  outline: 1px solid var(--primary);
+  margin: 10px auto;
+}
+
+.button-task {
+  display: flex;
+  min-width: min(900px, 100%);
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  cursor: default;
+  max-width: 60rem;
+  transition: background-color 1s;
+}
+
+.button-task:hover {
+  /* background-color: var(--secondary-light); */
+}
+
+.left-task-panel {
+  display: flex;
+  align-items: center;
+}
+
+.fa-circle {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.task-content {
+  cursor: pointer;
+}
+
+.task-content.active {
+  display: none;
+}
+
+.input-task-name {
+  display: none;
+  height: 24px;
+  padding: 5px;
+  border: 1px solid #555;
+  background-color: var(--primary-light);
+  color: inherit;
+  font-family: inherit;
+}
+
+.input-task-name.active {
+  display: block;
+}
+
+.right-task-panel {
+  display: flex;
+  align-items: center;
+}
+
+.due-date {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.due-date.active {
+  display: none;
+}
+
+.input-due-date {
+  display: none;
+  height: 24px;
+  padding: 5px;
+  border: 1px solid #555;
+  margin: 0 10px;
+  background-color: var(--primary-light);
+  color: inherit;
+  font-family: inherit;
+}
+
+.input-due-date.active {
+  display: block;
+}
+
+.button-task .right-task-panel i {
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.button-task:hover .right-task-panel i {
+  visibility: visible;
+}
+
+/* ************************************************************* */
+/* Projects & Sidebar */
+/* ************************************************************* */
+
+.default-projects-list > * {
+  display: block;
+}
+
+.projects-heading {
+  padding: var(--organism-padding) 0;
+}
+.add-project-popup {
+  display: none;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.add-project-popup.active {
+  display: block;
+}
+
+.input-add-project-popup {
+  border: 1px solid #aaa;
+  margin-bottom: 10px;
+}
+
+.add-project-popup-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.button-add-project-popup {
+  border: 1px solid #99dd99;
+  background-color: #aaffaa;
+  font-weight: bold;
+}
+
+.button-cancel-project-popup {
+  border: 1px solid #eeadad;
+  background-color: #ffbebe;
+  font-weight: bold;
+}
+
+.button-add-project-popup:hover {
+  background-color: #a6f0a6;
+}
+
+.button-cancel-project-popup:hover {
+  background-color: #f5b2b2;
+}
+
+.button-project {
+  display: flex;
+  align-items: end;
+  gap: 0 0.55rem;
+}
+
+.button-project > * {
+  display: flex;
+  align-items: end;
+}

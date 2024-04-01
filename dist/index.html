@@ -4,9 +4,83 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/4c536a6bd5.js"
+      crossorigin="anonymous"
+    ></script>
     <title>To do app</title>
   </head>
   <body>
+    <!-- Nav bar -->
+    <header>Main header nav</header>
+    <!-- Main content -->
+    <div class="root">
+      <sidebar>
+        <div class="projects">
+          <!-- Default projects -->
+          <div class="default-projects-list">
+            <button class="default-project-button" id="button-inbox-projects">
+              <i class="fas fa-inbox"></i>Inbox
+            </button>
+            <button class="default-project-button" id="button-day-projects">
+              <i class="fas fa-calendar-day"></i>Today
+            </button>
+            <button class="default-project-button" id="button-week-projects">
+              <i class="fas fa-calendar-week"></i>This Week
+            </button>
+          </div>
+
+          <!-- User defined projects -->
+
+          <!-- Empty div for user projects to live -->
+          <h2 class="projects-heading">Projects</h2>
+          <div class="projects-list" id="projects-list"></div>
+
+          <!-- Add new projects -->
+          <button class="button-add-project" id="button-add-project">
+            <i class="fas fa-plus"></i>Add Project
+          </button>
+          <div class="add-project-popup" id="add-project-popup">
+            <input
+              class="input-add-project-popup"
+              id="input-add-project-popup"
+              type="text"
+            />
+
+            <div class="add-project-popup-buttons">
+              <button
+                class="button-add-project-popup"
+                id="button-add-project-popup"
+              >
+                Add
+              </button>
+              <button
+                class="button-cancel-project-popup"
+                id="button-cancel-project-popup"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </sidebar>
+
+      <main>
+        <div id="project-preview" class="project-preview"></div>
+        <!-- Input todo component -->
+        <!-- <div class="add-todo">
+          <form class="form-add-todo" action="">
+            <input type="text" />
+            <button class="primary">Add todo</button>
+          </form>
+        </div> -->
+        <!-- List of Todos component -->
+        <!-- <div class="todo-list">buy milk</div> -->
+      </main>
+    </div>
+    <!-- Footer -->
+    <footer>footer</footer>
     <script src="bundle.js"></script>
   </body>
 </html>
